@@ -1,0 +1,2 @@
+class Oder < ApplicationRecord
+end
