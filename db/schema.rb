@@ -54,23 +54,7 @@ ActiveRecord::Schema.define(version: 2020_10_01_085325) do
     t.index ["reset_password_token"], name: "index_customers_on_reset_password_token", unique: true
   end
 
-  create_table "items", force: :cascade do |t|
-    t.integer "genre_id"
-    t.string "name"
-    t.string "image_id"
-    t.text "introduction"
-    t.integer "price"
-    t.boolean "is_active", default: true, null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
 
-  create_table "order_details", force: :cascade do |t|
-    t.integer "order_id"
-    t.integer "item_id"
-    t.integer "order_price"
-    t.integer "amount"
-    t.integer "making_status", default: 0, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
