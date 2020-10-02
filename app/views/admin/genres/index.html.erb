@@ -4,16 +4,16 @@
       <h2>ジャンル追加・一覧画面</h2><br>
 
       <div class="form-group col-md-10">
-      <%= form_for(@genre, url: admins_genres_path) do |f| %>
+      <%= form_for(@genre, url: admin_genres_path) do |f| %>
 
 
             <%= f.label :ジャンル %>
             <%= f.text_field :name,class: "col-md-4" %>
 
-            <%= f.radio_button :is_genres_status, :true %>
-            <%= f.label :is_genres_status, "有効"  %>
-            <%= f.radio_button :is_genres_status, :false %>
-            <%= f.label :is_genres_status, "無効" %>
+            <%= f.radio_button :is_active, :true %>
+            <%= f.label :is_active, "有効"  %>
+            <%= f.radio_button :is_active, :false %>
+            <%= f.label :is_active, "無効" %>
             <%= f.submit "追加" ,class: "btn btn-primary" %>
 
       <% end %>
@@ -33,7 +33,7 @@
             <tr>
               <td><%= genre.name %></td>
               <td>
-                <% if genre.is_genres_status %>
+                <% if genre.is_active %>
                 有効
                 <% else %>
                 無効
