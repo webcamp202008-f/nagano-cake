@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-10 col-xs-offset-1">
+      <h2>商品一覧</h2>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th>商品一覧</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+            <th>ジャンル</th>
+            <th>ステータス</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <td><%= item.id %></td>
+              <td><%= link_to item.name ,admins_item_path(item) %></td>
+              <td><%= item.price.to_s(:delimited, delimiter: ',') %></td>
+              <td><%= item.genre.name %></td>
+              <td><% if item.is_sales_status == false %>
+              販売中
+              <% else %>
+              販売停止中
+              <% end %>
+              </td>
+            </tr>
+            <% end %>
+            <%= paginate @items %>
+        </tbody>
+      </table>
+    </div>
+  </div>
