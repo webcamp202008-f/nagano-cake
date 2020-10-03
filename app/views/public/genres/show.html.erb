@@ -1,0 +1,22 @@
+<div class="container">
+<div class="row">
+	<div class="col-xs-2">
+		<%= render 'public/items/sidebar', genres: @genres %>
+	</div>
+
+  <h2><%= @genre.name %>一覧(全<%= @items.count %>件)</h2>
+	<div class="col-xs-9 col-xs-offset-1">
+		<div class="product-card-content">
+			<% @items.each do |item| %>
+				<div class="col-xs-3" style="padding-right: 0px; padding-left: 0px; margin: 10px 0;">
+					<%= link_to item_path(item.id), data: {"turbolinks" => false} do %>
+						<%= attachment_image_tag item, :image, :fill, 180, 130, format: 'jpeg',fallback: "no_image.jpg", size:'200x150'%>
+						<%= item.name %>
+						¥<%= item.price.to_s(:delimited, delimiter: ',') %>
+					<% end %>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+</div>
