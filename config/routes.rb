@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   end
 
   scope module: :public do
-    resources :items, only: [:top,:index,:show]
+    root 'items#top'
+    resources :genres, only: [:show]
+    resources :items, only: [:index,:show]
     resources :customers, only: [:show,:edit,:update,:unsubsribe,:withdraw]
     resources :cart_items, only: [:index,:update,:destroy,:destroy_all,:create]
     resources :orders, only: [:index,:show,:update]
