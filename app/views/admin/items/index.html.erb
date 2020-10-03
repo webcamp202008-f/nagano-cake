@@ -17,10 +17,10 @@
           <% @items.each do |item| %>
             <tr>
               <td><%= item.id %></td>
-              <td><%= link_to item.name ,admins_item_path(item) %></td>
+              <td><%= link_to item.name ,admin_item_path(item) %></td>
               <td><%= item.price.to_s(:delimited, delimiter: ',') %></td>
               <td><%= item.genre.name %></td>
-              <td><% if item.is_sales_status == false %>
+              <td><% if item.is_active? == false %>
               販売中
               <% else %>
               販売停止中
@@ -28,7 +28,6 @@
               </td>
             </tr>
             <% end %>
-            <%= paginate @items %>
         </tbody>
       </table>
     </div>
