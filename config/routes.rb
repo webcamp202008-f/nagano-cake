@@ -1,6 +1,24 @@
 Rails.application.routes.draw do
-  devise_for :admins
-  devise_for :customers
+
+  # customer側ルーティング
+  devise_for :customers, controllers: {
+   sessions:      'public/customers/sessions',
+   passwords:     'public/customers/passwords',
+   registrations: 'public/customers/registrations'
+  }
+
+  # admin側ルーティング
+  devise_for :admins, controllers: {
+   sessions:      'admin/admins/sessions',
+   passwords:     'admin/admins/passwords',
+   registrations: 'admin/admins/registrations'
+  }
+
+
+
+
+
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :admin do
     resources :items, only: [:index,:new,:create,:show,:edit,:update]
