@@ -3,7 +3,7 @@
     <h2>ジャンル編集</h2><br>
 
   <div class="edit-genre-form">
-  <%= form_for(@genre, url: admin_genre_path) do |f| %>    
+  <%= form_for(@genre, url: admin_genre_path) do |f| %>
 
         <%= f.label :ジャンル %>
         <%= f.text_field :name,class: "col-md-4" %>
