@@ -30,6 +30,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'items#top'
+    delete 'cart_items' => 'cart_items#all_destroy', as: 'all_destroy'
     resources :genres, only: [:show]
     resources :items, only: [:index,:show]
     resources :customers, only: [:show,:edit,:update,:unsubsribe,:withdraw]
