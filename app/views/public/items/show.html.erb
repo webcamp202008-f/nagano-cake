@@ -12,8 +12,9 @@
 	<h3><%= @item.name %></h3>
 	<p><%= @item.introduction %></p>
 	<div class="col-xs-6">
-	<p><%= form.select :quantity, [['1個', 1], ['2個', 2], ['3個', 3], ['4個', 4], ['5個', 5], ['6個', 6],['7個', 7], ['8個', 8], ['9個', 9]], {:prompt => "個数選択"} %></p>
-</div>
+		<p class="item-content2", style="font-family: arial black">¥ <%= ((@item.price*1.1).floor).to_s(:delimited, delimiter: ',') %> (税込)
+	    <p><%= form.select :quantity, [['1個', 1], ['2個', 2], ['3個', 3], ['4個', 4], ['5個', 5], ['6個', 6],['7個', 7], ['8個', 8], ['9個', 9]]%></p>
+    </div>
 	<div class="col-xs-6">
 	<p><%= form.submit "カートに入れる", class:"btn btn-primary"%></p>
 </div>

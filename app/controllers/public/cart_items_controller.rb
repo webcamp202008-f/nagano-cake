@@ -5,7 +5,7 @@ class Public::CartItemsController < ApplicationController
     # カート商品一覧を表示
     def index
         @cart_items = current_customer.cart_items
-        @total_price = @cart_items.sum{|cart_item|cart_item.item.price * cart_item.quantity * 1.1}
+        @total_price = @cart_items.sum{|cart_item|cart_item.item.price * cart_item.quantity.to_i * 1.1}
         # sumメソッド：合計金額を出す
         # 1行目の@cart_itemsにsumメソッドを用いて{}の||ブロック変数にcart_itemを代入している。(each do || end の文章と同じイメージ)
         # cart_item.item.price_without_tax：アソシエーションしているのでドットでつなげる。
