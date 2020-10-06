@@ -35,9 +35,9 @@ class Public::OrdersController < ApplicationController
 		# ご自身の住所が選択された時
 		if destination == 0
 
-			session[:order][:post_code] = customer.postal_code
+			session[:order][:post_code] = customer.post_code
 			session[:order][:address] = customer.address
-			session[:order][:addressee] = customer.famliy_name + customer.first_name
+			session[:order][:addressee] = customer.family_name + customer.first_name
 
 		# 登録済住所が選択された時
 		elsif destination == 1
@@ -76,12 +76,12 @@ class Public::OrdersController < ApplicationController
 		order = Order.new(session[:order])
 		order.save
 
-		if session[:new_address]
-			shipping_address = current_customer.shipping_addresses.new
-			shipping_address.postal_code = order.post_code
-			shipping_address.address = order.address
-			shipping_address.name = order.name
-			shipping_address.save
+			if session[:new_address]
+			address = current_customer.addresses.new
+			address.postal_code = order.post_code
+			address.address = order.address
+			address.name = order.addressee
+			address.save
 			session[:new_address] = nil
 		end
 
@@ -91,9 +91,9 @@ class Public::OrdersController < ApplicationController
 			order_detail = OrderDetail.new
 			order_detail.order_id = order.id
 			order_detail.item_id = cart_item.item.id
-			order_detail.quantity = cart_item.quantity
+			order_detail.amount = cart_item.quantity
 			order_detail.making_status = 0
-			order_detail.price = (cart_item.item.price_without_tax * 1.1).floor
+			order_detail.order_price = (cart_item.item.price * 1.1).floor
 			order_detail.save
 		end
 

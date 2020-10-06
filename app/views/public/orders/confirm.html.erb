@@ -59,7 +59,7 @@
         <tr>
           <th  class="info">支払方法</th>
           <td class="text-left">
-            <%= session[:order]["payment_method"] %>
+            <%= session[:order]["how_to_pay"] %>
           </td>
         </tr>
         <tr>
@@ -67,11 +67,12 @@
           <td class="text-left">
             <%= session[:order]["post_code"] %><br>
             <%= session[:order]["address"] %><br>
-            <%= session[:order]["name"]  %>
+            <%= session[:order]["addressee"]  %>
           </td>
         </tr>
       </table>
 
+   <%= link_to "購入を確定する", orders_complete_path, class: 'btn btn-primary col-xs-12' %>
 
 
     </div>
