@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>NaganoCake</title>
+    <title>Naganocake</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <!--<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
   </head>
 
-  <body>
-    <%= yield %>
-  </body>
-</html>
+<!------------- カスタマーがログインしている時 -------------->
+  <% if customer_signed_in? %>
+    <body id="wrapper">
+
+    <div id="header">
+      <%= render "layouts/header" %>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+    </body>
+
+    <!----------　管理者がログインしている時 -------------->
+  <% elsif admin_signed_in? %>
+    <body id="wrapper">
+
+    <div id="header">
+      <%= render "layouts/header" %>
+    </div>
+
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+    </body>
+
+    <!------------ ログアウトしている時 --------------->
+  <% else %>
+    <body id="wrapper">
+
+    <div id="header">
+      <%= render "layouts/header" %>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <%= render "layouts/footer" %>
+    </body>
+  <% end %>
