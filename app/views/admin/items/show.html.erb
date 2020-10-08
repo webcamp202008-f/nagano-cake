@@ -21,8 +21,8 @@
               <td><%= @item.genre.name %></td>
             </tr>
             <tr>
-              <td>税込価格</td>
-              <td><%= (@item.price*1.1).floor.to_s(:delimited, delimiter: ',') %>円</td>
+              <td>税別価格</td>
+              <td><%= (@item.price).floor.to_s(:delimited, delimiter: ',') %>円</td>
             </tr>
             <tr>
               <td>販売ステータス</td>
