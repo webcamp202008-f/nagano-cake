@@ -30,11 +30,15 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'items#top'
+    patch 'customers/withdraw' => 'customers#withdraw', as: 'customers_withdraw'
+    get 'unsubscribe' => 'customers#unsubscribe'
     delete 'cart_items' => 'cart_items#all_destroy', as: 'all_destroy'
     resources :genres, only: [:show]
     resources :items, only: [:index,:show]
-    resources :customers, only: [:show,:edit,:update,:unsubsribe,:withdraw]
-    resources :cart_items, only: [:index,:update,:destroy,:create]
+
+    resources :customers, only: [:show,:edit,:update]
+    resources :cart_items, only: [:index,:update,:destroy,:destroy_all,:create]
+
     get 'orders/confirm' => 'orders#confirm', as: 'orders_confirm'
     get 'orders/complete' => 'orders#complete'
     resources :orders, only: [:index,:show,:update,:new,:create]
