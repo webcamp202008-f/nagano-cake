@@ -13,13 +13,18 @@ def after_sign_in_path_for(resource)
   end
 end
 
+
 def after_sign_out_path_for(resource)
-#ここの記述ではwhenは不要。
-  new_admin_session_path
-  #when Customer
-    #admin_items_path
+
+
+  if resource == :admin
+    new_admin_session_path
+  else
+  	new_customer_session_path
+  end
 end
 
+#byebug
 
 
 protected
