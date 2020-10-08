@@ -12,7 +12,7 @@
             ようこそ、<%= current_customer.family_name + current_customer.first_name %>さん！
           </li>
           <!-- 14行目root_pathをマイページに遷移するように直す -->
-          <li><%= link_to "マイページ", root_path, class:"header_menu" %></li>
+          <li><%= link_to "マイページ", customer_path(current_customer), class:"header_menu" %></li>
           <li class="partition">|</li>
           <li><%= link_to "商品一覧", items_path, class:"header_menu" %></li>
           <li class="partition">|</li>
@@ -25,13 +25,13 @@
 
         <% elsif admin_signed_in? %>
           <!----------------- 管理者がログインしている時 ------------------------>
-          <li><%= link_to "商品一覧", admins_items_path, class:"header_menu" %></li>
+          <li><%= link_to "商品一覧", admin_items_path, class:"header_menu" %></li>
           <li class="partition">|</li>
-          <li><%= link_to "会員一覧", admins_customers_path, class:"header_menu" %></li>
+          <li><%= link_to "会員一覧", admin_customers_path, class:"header_menu" %></li>
           <li class="partition">|</li>
-          <li><%= link_to "注文履歴一覧", admins_orders_path, class:"header_menu" %></li>
+          <li><%= link_to "注文履歴一覧", admin_orders_path, class:"header_menu" %></li>
           <li class="partition">|</li>
-          <li><%= link_to "ジャンル一覧", admins_genres_path, class:"header_menu" %></li>
+          <li><%= link_to "ジャンル一覧", admin_genres_path, class:"header_menu" %></li>
           <li class="partition">|</li>
           <!-- 38行目root_pathからabout_pathに直す -->
           <li><%= link_to "About", root_path, class:"header_menu" %></li>
