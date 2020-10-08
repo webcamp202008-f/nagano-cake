@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-xs-12">
       <h3><strong>登録情報編集</strong></h3>
-      <%= form_with(model:@customer, url:customer_path ,method: :PATCH) do |f| %>
+      <%= form_with(model:@customer, url:customer_path,method: :PATCH) do |f| %>
       <!-- local: trueがない場合、Rails5ではAjaxによる送信という意味になる。普通にHTMLとしてフォームを送信する場合にlocal: trueが必要になる-->
         <div>
             <div class="col-xs-12">

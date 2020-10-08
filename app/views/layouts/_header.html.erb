@@ -9,7 +9,7 @@
         <% if customer_signed_in? %>
           <!---------------------カスタマーがログインしている時 ----------------->
           <li id="welcom_cutoumer">
-            ようこそ、<%= current_customer.family_name + current_customer.first_name %>さん！
+            ようこそ、<%= "#{current_customer.family_name}" + "#{current_customer.first_name}" %>さん！
           </li>
           <!-- 14行目root_pathをマイページに遷移するように直す -->
           <li><%= link_to "マイページ", customer_path(current_customer), class:"header_menu" %></li>
@@ -17,9 +17,6 @@
           <li><%= link_to "商品一覧", items_path, class:"header_menu" %></li>
           <li class="partition">|</li>
           <li><%= link_to "カート", cart_items_path, class:"header_menu" %></li>
-          <li class="partition">|</li>
-          <!-- 21行目root_pathをaboutに遷移するように直す -->
-          <li><%= link_to "About", root_path, class:"header_menu" %></li>
           <li class="partition">|</li>
           <li><%= link_to "ログアウト", destroy_customer_session_path, method: :delete, class:"header_menu" %></li>
 
@@ -34,8 +31,6 @@
           <li><%= link_to "ジャンル一覧", admin_genres_path, class:"header_menu" %></li>
           <li class="partition">|</li>
           <!-- 38行目root_pathからabout_pathに直す -->
-          <li><%= link_to "About", root_path, class:"header_menu" %></li>
-          <li class="partition">|</li>
           <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"header_menu" %></li>
 
         <% else %>
@@ -44,7 +39,6 @@
           <li class="partition">|</li>
           <li><%= link_to "新規登録", new_customer_registration_path, class:"header_menu" %></li>
           <li class="partition">|</li>
-          <!-- 48行目root_pathをabout_pathに変更する -->
           <li><%= link_to "About", root_path, class:"header_menu" %></li>
           <li class="partition">|</li>
           <li><%= link_to "ログイン", new_customer_session_path, class:"header_menu" %></li>

@@ -9,7 +9,7 @@ def after_sign_in_path_for(resource)
   when Admin
     admin_items_path
   when Customer
-    admin_items_path
+    items_path
   end
 end
 
