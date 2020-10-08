@@ -31,6 +31,7 @@ Rails.application.routes.draw do
 
   scope module: :public do
     root 'items#top'
+    get 'about' => 'items#about'
     patch 'customers/withdraw' => 'customers#withdraw', as: 'customers_withdraw'
     get 'unsubscribe' => 'customers#unsubscribe'
     delete 'cart_items' => 'cart_items#all_destroy', as: 'all_destroy'
