@@ -22,7 +22,7 @@ def after_sign_out_path_for(resource)
   else
   	new_customer_session_path
   end
-  
+
 end
 
 #byebug
