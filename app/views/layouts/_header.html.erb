@@ -32,6 +32,11 @@
           <li class="partition">|</li>
           <!-- 38行目root_pathからabout_pathに直す -->
           <li><%= link_to "ログアウト", destroy_admin_session_path, method: :delete, class:"header_menu" %></li>
+          <p></p><br>
+          <%= form_tag do %>
+            <%= text_field_tag :search %>
+            <%= submit_tag 'Search', :name => nil %>
+             <% end %>
 
         <% else %>
           <!------------------- ログインしていない時 ------------------------->
