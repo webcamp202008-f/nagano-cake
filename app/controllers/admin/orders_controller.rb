@@ -3,7 +3,13 @@ class Admin::OrdersController < ApplicationController
  before_action :authenticate_admin!
 
 	def index
-    @orders = Order.all
+    
+    if params[:customer_id]
+		@customer = Customer.find(params[:customer_id])
+		@orders= Order.where(customer_id: params[:customer_id])
+	else
+		@orders = Order.all
+    end
     end
 
 	def show
@@ -28,7 +34,7 @@ class Admin::OrdersController < ApplicationController
 
   private
 	def order_params
-		params.require(:order).permit(:order_status)
+		params.require(:order).permit(:order_status, :customer_id)
 	end
 
 end
