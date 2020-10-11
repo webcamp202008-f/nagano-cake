@@ -9,7 +9,7 @@ def after_sign_in_path_for(resource)
 	  when Admin
 	    admin_admin_tops_path
 	  when Customer
-	    items_path
+	    root_path
 	  end
 end
 
@@ -33,3 +33,4 @@ protected
       devise_parameter_sanitizer.permit(:sign_up, keys: [:email, :encrypted_password, :family_name, :first_name, :family_name_kana, :first_name_kana, :post_code, :address, :phone_number])
     end
 end
+
