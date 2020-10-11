@@ -27,6 +27,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:index,:show,:update]
     resources :order_details, only: [:update]
     get 'admin/tops' => 'tops#top'
+    get 'customerindex' => "orders#customerindex"
   end
 
   scope module: :public do
