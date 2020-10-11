@@ -52,7 +52,7 @@
 
         <div class="row">
           <%= link_to "編集する", edit_admin_customer_path(@customer), class: "btn btn-success" %>
-          <%= link_to "注文一覧を見る",admin_orders_path, class: "btn btn-success" %>
+          <%= link_to "注文一覧を見る",admin_orders_path(customer_id: @customer.id), class: "btn btn-success" %>
         </div>
   </div>
 </div>
