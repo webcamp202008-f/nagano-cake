@@ -9,22 +9,22 @@
 		<div class="product-card-content">
 			<% @items.each do |item| %>
 
-			<% if item.is_active == false %>
+			<% if item.is_active == true %>
 
 			<div class="col-xs-3" style="padding-right: 0px; padding-left: 0px; margin: 10px 0;">
-					<%= link_to item_path(item.id), data: {"turbolinks" => false} do %>
+					<%= link_to item_path(item.id) ,style: "color: black;", data: {"turbolinks" => false} do %>
 						<%= attachment_image_tag item, :image, :fill, 180, 130, format: 'jpeg',fallback: "no_image.jpg", size:'200x150'%>
 						<%= "#{item.name}"+ " " +"販売中止" %>
-						¥<%= item.price.to_s(:delimited, delimiter: ',') %>
+						¥<%= ((item.price*1.1).floor).to_s(:delimited, delimiter: ',') %>(税込)
 					<% end %>
 
 			<% else %>
 
            <div class="col-xs-3" style="padding-right: 0px; padding-left: 0px; margin: 10px 0;">
-					<%= link_to item_path(item.id), data: {"turbolinks" => false} do %>
+					<%= link_to item_path(item.id) ,style: "color: black;", data: {"turbolinks" => false} do %>
 						<%= attachment_image_tag item, :image, :fill, 180, 130, format: 'jpeg',fallback: "no_image.jpg", size:'200x150'%>
 						<%= item.name %>
-						¥<%= item.price.to_s(:delimited, delimiter: ',') %>
+						¥<%= ((item.price*1.1).floor).to_s(:delimited, delimiter: ',') %>(税込)
 					<% end %>
 			<% end %>
 				</div>
