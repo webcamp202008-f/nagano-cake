@@ -15,7 +15,7 @@ class Public::ItemsController < ApplicationController
 
 	def top
 		@genres = Genre.all
-	    @items = Item.all
+	    @items = Item.where(is_active: false)
     end
 
 end
