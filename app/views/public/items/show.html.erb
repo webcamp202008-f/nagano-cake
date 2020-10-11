@@ -8,8 +8,8 @@
 
 <div class="col-xs-4 col-xs-offset-1">
 <%= attachment_image_tag @item, :image, :fill, 300, 250, format: 'jpeg',fallback: "no_image.jpg", size:'380x300' %>
-<%= form_for(@cart_item , url: cart_items_path(item_id: @item), method: :post) do |form| %>
 </div>
+<%= form_for(@cart_item , url: cart_items_path(item_id: @item), method: :post) do |form| %>
 <div class="col-xs-5">
 	<h3><%= @item.name %></h3>
 	<p><%= @item.introduction %></p>
@@ -21,13 +21,12 @@
 	<p><%= form.submit "カートに入れる", class:"btn btn-primary"%></p>
    </div>
 <% end %>
-
 <% else %>
 
 <div class="col-xs-4 col-xs-offset-1">
 <%= attachment_image_tag @item, :image, :fill, 300, 250, format: 'jpeg',fallback: "no_image.jpg", size:'380x300' %>
-<%= form_for(@cart_item , url: cart_items_path(item_id: @item), method: :post) do |form| %>
 </div>
+<%= form_for(@cart_item , url: cart_items_path(item_id: @item), method: :post) do |form| %>
 <div class="col-xs-5">
 	<h3><%= "#{@item.name}"+" "+"販売停止中" %></h3>
 	<p><%= @item.introduction %></p>

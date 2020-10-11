@@ -3,7 +3,12 @@ class Admin::OrdersController < ApplicationController
  before_action :authenticate_admin!
 
 	def index
-    @orders = Order.all
+
+      if params[:customer_id]
+		@orders= Order.where(customer_id: params[:customer_id])
+	  else
+		@orders = Order.all
+      end
     end
 
 	def show
@@ -18,7 +23,7 @@ class Admin::OrdersController < ApplicationController
 	def update
 		order = Order.find(params[:id])
 		order_details = order.order_details
-    order.update(order_params)
+        order.update(order_params)
 
 		if order.order_status == "入金確認"
 			order_details.update_all(making_status: "製作待ち")
@@ -28,7 +33,7 @@ class Admin::OrdersController < ApplicationController
 
   private
 	def order_params
-		params.require(:order).permit(:order_status)
+		params.require(:order).permit(:order_status, :customer_id)
 	end
 
 end
