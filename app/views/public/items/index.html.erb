@@ -12,16 +12,16 @@
 		<div class="col-xs-3" style="padding-right: 0px; padding-left: 0px; margin: 10px 0; height:180px;">
 			<%= link_to item_path(item.id) ,style: "color: black;", data: {"turbolinks" => false} do %>
 				<%= attachment_image_tag item, :image, :fill, 200, 150, format: 'jpeg',fallback: "no_image.jpg", size:'200x150' %><br>
-				<%= item.name %>
-				¥ <%= ((item.price*1.1).floor).to_s(:delimited, delimiter: ',') %> (税込)
+				<%= item.name %><br>
+				¥ <%= ((item.price*1.1).floor).to_s(:delimited, delimiter: ',') %>(税込)<br>
 			<% end %>
 		</div>
 		<% elsif item.genre.is_active == true && item.is_active == true %>
 		<div class="col-xs-3" style="padding-right: 0px; padding-left: 0px; margin: 10px 0; height:180px;">
 			<%= link_to item_path(item.id) ,style: "color: black;", data: {"turbolinks" => false} do %>
 				<%= attachment_image_tag item, :image, :fill, 200, 150, format: 'jpeg',fallback: "no_image.jpg", size:'200x150' %><br>
-				<%= "#{item.name}"+" " +"販売中止" %>
-				¥ <%= ((item.price*1.1).floor).to_s(:delimited, delimiter: ',') %> (税込)
+				<div class= "text-danger"><%= "#{item.name}"+" " +"販売中止" %></div>
+				 ¥<%=((item.price*1.1).floor).to_s(:delimited, delimiter: ',') %> (税込)
 				<% end %>
         </div>
         <% end %>
