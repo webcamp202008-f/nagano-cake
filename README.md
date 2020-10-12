@@ -1,24 +1,45 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# NAGANO CAKE
+長野県のお菓子屋さんのECサイト
+# サイト概要
+- 概要 ⻑野県にある⼩さな洋菓⼦店「ながのCAKE」の商品を通販するためのECサイト開発。 ◆案件の背景 元々近隣住⺠が顧客だったが、昨年始めたInstagramから⼈気となり、全国から注⽂が来る ようになっ  た。 InstagramのDMやメールで通販の注⽂を受けていたが、情報管理が煩雑になってきたた め、管理機能を含んだ通販サイトを開設しようと思い⾄った。
+# 機能一覧
+### ユーザー機能
+- マイページ一覧
+- 商品購入
+- 注文履歴の閲覧
+- カート機能
+- 支払い方法
+- 検索機能
+### 商品一覧
+- 商品一覧ページ
+- 商品詳細ページ
+- ジャンル検索
+- 注文商品　ステータス
+### 管理者側
+- ユーザー管理
+- 商品登録、編集
+- 制作ステータスの変更
+- ジャンル登録、編集
+- 注文履歴の一覧
+- 検索機能
+# 設計
+- テーブル定義書
+- アプリケーション詳細設計
+- ER図
 
-Things you may want to cover:
+### 管理者用アカウント
+- email:test@test
+- pass :testtest
 
-* Ruby version
+### 開発環境
+- vagrant
+-'rails', '~> 5.2.4', 
 
-* System dependencies
+### 使用gemfile
+- "devise"
+- 'bootstrap-sass', '~> 3.3.6'
+- 'jquery-rails'
+- "refile"
+- "refile-mini_magick"
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
