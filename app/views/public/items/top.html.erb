@@ -11,6 +11,7 @@
     </div>
 
     <div class="col-xs-9 col-xs-offset-1">
+    <div class="b"><img class="c" src="assets/top_cake.jpg" width="900" height="500" ></div>
         <h4 style="font-family: HiraMinPro-W6; color: #000000; margin: 20px 0;">ようこそ、NaganoCakeへ！<br>
         このサイトは、ケーキ販売のECサイトになります。<br>
         会員でない方も商品の閲覧はできますが、<br>
@@ -26,7 +27,7 @@
                 <% if item.genre.is_active == true && item.is_active == false %>
                     <div class="col-xs-3" style="padding-right: 0px; padding-left: 0px;">
                         <%= link_to item_path(item.id) ,style: "color: black;", data: {"turbolinks" => false} do %>
-                            <%= attachment_image_tag item, :image, :fill, 180, 125, format: 'jpeg',fallback: "no_image.jpg", size:'180x125' %><br>
+                            <%= attachment_image_tag item, :image, :fill, 145, 125, format: 'jpeg',fallback: "no_image.jpg", size:'145x125' %><br>
                             <%= item.name %><br>
                             ¥<%= item.price.to_s(:delimited, delimiter: ',') %>
                         <% end %>
