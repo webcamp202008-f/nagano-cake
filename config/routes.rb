@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '/search' => 'search#search'
   # customer側ルーティング
   devise_for :customers, controllers: {
    sessions:      'public/customers/sessions',
@@ -48,3 +49,4 @@ Rails.application.routes.draw do
     resources :addresses, only: [:index,:edit,:create,:update,:destroy]
   end
 end
+

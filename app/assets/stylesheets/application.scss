@@ -26,8 +26,8 @@
 /*---------------ヘッダー--------------*/
 header {
 	background-color: #444444;
-}
 
+}*/
 .header_logo {
 	margin-top: 5px;
 }
@@ -67,4 +67,22 @@ header {
 
 footer {
 	background-color: #444444;
+}
+
+/*---------topスライドショー--------*/
+
+.c{
+  height: 500px;
+  width :100%;
+}
+
+.slick-dots {
+  li {
+    font-size: 20px !important;
+    button:before {
+      content: "🐾" !important;
+      font-size: 14px !important;
+      color: rgb(60, 60, 60) !important;
+    }
+  }
 }
