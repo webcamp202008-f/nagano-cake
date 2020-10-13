@@ -8,4 +8,14 @@ class Item < ApplicationRecord
   validates :name, {presence: true}
   validates :introduction, {presence: true}
   validates :price, {presence: true}
+
+      def self.search(word,search)
+        if search == "perfect_match"
+             @item = Item.where("name LIKE?","#{word}")
+        elsif search == "partial_match"
+             @item = Item.where("name LIKE?","%#{word}%")
+        else
+             @item = Item.all
+        end
+      end
 end

@@ -1,0 +1,71 @@
+
+
+<h2>検索結果</h2>
+
+<table class="table table-hover table-inverse">
+  <% if @range == 'item' %>
+  <thead>
+    <tr>
+     <th></th>
+            <th>商品一覧</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+            <th>ジャンル</th>
+            <th>ステータス</th>
+     <th colspan="3"></th>
+    </tr>
+  </thead>
+
+
+  <tbody>
+	  <% @item.each do |item| %>
+	    <tr>
+	      <td><%= item.id %></td>
+	      <td><%= link_to item.name ,admin_item_path(item) %></td>
+	      <td><%= item.price.to_s(:delimited, delimiter: ',') %></td>
+	      <td><%= item.genre.name %></td>
+	      <td><% if item.is_active? == false %>
+	      販売中
+	      <% else %>
+	      販売停止中
+	      <% end %>
+	      </td>
+	    </tr>
+	  <% end %>
+
+  </tbody>
+
+  <% else %>
+  <thead>
+     <tr>
+        <th>会員ID</th>
+        <th>氏名</th>
+        <th>メールアドレス</th>
+        <th>ステータス</th>
+      <th colspan="3"></th>
+     </tr>
+   </thead>
+
+    <tbody>
+      <% @customer.each do |customer| %>
+        <tr>
+          <td><%= customer.id %></td>
+
+          <td><%= link_to "#{customer.family_name}" + " " + "#{customer.first_name}",admin_customer_path(customer) %></td>
+
+          <td><%= customer.email %></td>
+          <td>
+            <% if customer.is_active? == false %>
+            有効
+            <% else %>
+            退会済
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  <% end %>
+</table>
+
+
+
