@@ -21,12 +21,11 @@ class Public::CartItemsController < ApplicationController
         @cart_item.item_id = params[:item_id]
         # byebug
 
-        if @cart_item.presence
-           @cart_item.save
+        if @cart_item.save
            flash[:notice] = "#{@cart_item.item.name}をカートに追加しました。"
            redirect_to cart_items_path
-        elsif @cart_items.presence = nil
-            flash[:alert] = "商品を選択してください"
+        else
+            flash[:alert] = "個数を選択してください"
             render "public/items/show"
         end
     end

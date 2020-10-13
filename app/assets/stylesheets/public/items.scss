@@ -1,3 +1,23 @@
 // Place all the styles related to the public::items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.name {
+    font-family: sans-serif;
+    border: 7px groove #fafad2;
+	width: 350px;
+	height: 50px;
+	font-size: 20px;
+	text-align: center}
+
+.introduction{
+	margin : 15px.0.0.0 ;
+	font-size : 25px;
+	font-family: cursive
+}
+
+.int{
+      text-size : 20px;
+      font-family: sans-serif;
+      margin : 0.0.0.60;
+      }
