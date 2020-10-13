@@ -24,9 +24,9 @@
 }
 
 /*---------------ヘッダー--------------*/
-/*header {
+header {
 	background-color: #444444;
-}*/
+}
 
 .header_logo {
 	margin-top: 5px;
@@ -42,7 +42,7 @@
 
 .header_menu {
 	font-family: HiraMinPro-W6;
-	color: #000000;
+	color: #FFFFFF;
 }
 
 .partition {
@@ -60,4 +60,11 @@
 
 .containar {
 	margin-top: 20px;
+	background-color: white;
+}
+
+/*-----------footer------------*/
+
+footer {
+	background-color: #444444;
 }
