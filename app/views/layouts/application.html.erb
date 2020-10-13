@@ -24,7 +24,10 @@
       <%= yield %>
     </div>
 
-    <%= render "layouts/footer" %>
+    <div id="footer">
+      <%= render "layouts/footer" %>
+    </div>
+
     </body>
 
     <!---------- 管理者がログインしている時 -------------->
@@ -40,7 +43,10 @@
       <%= yield %>
     </div>
 
-    <%= render "layouts/footer" %>
+    <div id="footer">
+      <%= render "layouts/footer" %>
+    </div>
+
     </body>
 
     <!------------ ログアウトしている時 --------------->
@@ -55,6 +61,10 @@
       <%= yield %>
     </div>
 
-    <%= render "layouts/footer" %>
+    <div id="footer">
+      <%= render "layouts/footer" %>
+    </div>
+
     </body>
   <% end %>
+

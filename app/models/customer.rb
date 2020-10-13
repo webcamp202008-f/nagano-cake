@@ -19,6 +19,16 @@ class Customer < ApplicationRecord
       super && self.is_active == false
     end
 
+    def self.search(word,search)
+        if search == "perfect_match"
+             @customer = Customer.where(["family_name LIKE? AND first_name LIKE?","%#{word}%","%#{word}%"])
+        elsif search == "partial_match"
+             @customer = Customer.where(["family_name LIKE? OR first_name LIKE?","%#{word}%","%#{word}%"])
+        else
+             @customer = Customer.all
+        end
+    end
 
 
 end
+
