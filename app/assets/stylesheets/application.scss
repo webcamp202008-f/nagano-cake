@@ -21,12 +21,17 @@
     background-color: white;
     font-family: HiraMinPro-W6;
     color: #000000;
+    position: relative;
+    box-sizing: border-box;
+    padding-bottom: 100px;
+    min-height: 100vh;
 }
 
 /*---------------ヘッダー--------------*/
 
 header {
 	background-color: #444444;
+	color: #00FFFF;
 }
 .header_logo {
 	margin-top: 5px;
@@ -61,11 +66,18 @@ header {
 .containar {
 	margin-top: 20px;
 	background-color: white;
+	min-height: 100vh;
+	position: absolute;
+	box-sizing: border-box;
 }
 
 /*-----------footer------------*/
 
 footer {
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	bottom: 0;
 	background-color: #444444;
 }
 
