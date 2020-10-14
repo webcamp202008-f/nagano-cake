@@ -65,11 +65,16 @@ header {
 /*-----------body------------*/
 
 .containar {
-	margin-top: 20px;
+	padding-top: 20px;
 	background-color: white;
 	min-height: 100vh;
 	position: absolute;
 	box-sizing: border-box;
+}
+
+.row {
+	padding-top: 100px;
+	padding-bottom: 100px;
 }
 
 /*-----------footer------------*/
