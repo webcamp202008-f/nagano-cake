@@ -1,6 +1,4 @@
-<div class="genrekara" style="font-size :20px;" >
-      ジャンルから探す
-    </div>
+<div class="genrekara" style="font-size :20px;" >ジャンルから探す</div>
 
     <table class="table table-bordered table-hover text-center ec-genre-list" >
       <tr>
@@ -10,12 +8,12 @@
       </tr>
 
       <% genres.each do |genre| %>
-      <% if genre.is_active? == true %>
-        <tr>
-          <td>
-            <%= link_to genre.name, genre_path(genre.id), class:"ec-genre-list-item"%>
+        <% if genre.is_active? == true %>
+          <tr>
+            <td>
+              <%= link_to genre.name, genre_path(genre.id), class:"ec-genre-list-item"%>
             </td>
-        </tr>
-           <% end %>
-           <% end %>
+          </tr>
+        <% end %>
+      <% end %>
     </table>

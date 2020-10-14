@@ -1,5 +1,6 @@
 <div class="row">
     <h3><strong>注文情報確認</strong></h3>
+
     <div class="col-xs-9">
       <table class="table table-hover table-inverse table-bordered">
         <thead>
@@ -31,6 +32,7 @@
         </tbody>
       </table>
     </div>
+
     <div class="col-xs-3 billing">
       <table class="table table-hover table-condensed table-bordered">
           <tr>
@@ -54,6 +56,7 @@
           </tr>
       </table>
     </div>
+
     <div class="col-xs-9 billing">
       <table class="table table-hover table-condensed table-bordered">
         <tr>
@@ -67,13 +70,11 @@
           <td class="text-left">
             <%= session[:order]["post_code"] %><br>
             <%= session[:order]["address"] %><br>
-            <%= session[:order]["addressee"]  %>
+            <%= session[:order]["addressee"] %>
           </td>
         </tr>
       </table>
 
-   <%= link_to "購入を確定する", orders_complete_path, class: 'btn btn-primary col-xs-12' %>
-
-
+      <%= link_to "購入を確定する", orders_complete_path, class: 'btn btn-primary col-xs-12' %>
     </div>
 </div>

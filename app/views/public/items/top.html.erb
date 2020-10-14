@@ -1,34 +1,29 @@
-<!-- <div class="a" data-turbolinks="false"> -->
-  <!--   <div class="b"><img class="c" src="assets/cake6.jpg"></div>
-    <div class="b"><img class="c" src="assets/cookie1.jpg"></div>
-    <div class="b"><img class="c" src="assets/fruites1.jpg"></div>
-</div> -->
-
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
-    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
 <div class="row">
-  	<div class="col-xs-2">
+  <div class="col-xs-2">
     <!-- ジャンルのサイドバーを表示 -->
     <%= render "public/items/sidebar", genres: @genres %>
-    </div>
+  </div>
 
-    <div class="col-xs-9 col-xs-offset-1">
+  <div class="col-xs-9 col-xs-offset-1">
 
 
     <div class="welcome-field">
-        <h1 class="welcome-text">ようこそ、NaganoCakeへ！</h1>
+      <h1 class="welcome-text">ようこそ、NaganoCakeへ！</h1>
 
         <div class="a">
         <div class="b"><img class="c" src="assets/cake.jpg"></div>
-        <div class="b"><img class="c" src="assets/baked.jpg"></div>
+        <div class="b"><img class="c" src="assets/choco.jpg"></div>
         <div class="b"><img class="c" src="assets/trat.jpg"></div>
         </div>
 
 
-        会員でない方も商品の閲覧はできますが、<br>
+        <p class="advice">会員でない方も商品の閲覧はできますが、<br>
         購入には会員登録が必要になります。<br>
+        </p>
     </div>
 
         <h3 class="recommended-items" style="font-family: HiraMinPro-W6; color: #000000;">オススメ商品</h3>

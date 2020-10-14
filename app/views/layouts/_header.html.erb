@@ -1,3 +1,5 @@
+<script src="https://kit.fontawesome.com/17810510b7.js" crossorigin="anonymous"></script>
+
 <header>
   <div class="container">
     <nav class="nav navbar-nav navbar-left">
@@ -9,7 +11,7 @@
         <% if customer_signed_in? %>
           <!---------------------カスタマーがログインしている時 ----------------->
           <li id="welcom_cutoumer">
-            ようこそ、<%= "#{current_customer.family_name}" + "#{current_customer.first_name}" %>さん！
+           ようこそ、<%= "#{current_customer.family_name}" + "#{current_customer.first_name}" %>さん！
           </li>
           <!-- 14行目root_pathをマイページに遷移するように直す -->
           <li><%= link_to "マイページ", customer_path(current_customer), class:"header_menu" %></li>
