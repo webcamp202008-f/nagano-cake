@@ -1,4 +1,4 @@
-![readme](https://user-images.githubusercontent.com/68421839/95713144-04849d80-0ca1-11eb-8e68-5ae317017d50.JPG)
+![nagano-cake](https://user-images.githubusercontent.com/68421839/95981717-0a71ae80-0e5a-11eb-8047-9f3ce6d9ad5d.JPG)
 # NAGANO CAKE
 長野県のお菓子屋さんのECサイト
 # サイト概要
