@@ -12,8 +12,6 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
   </head>
 
-<!------------- カスタマーがログインしている時 -------------->
-  <% if customer_signed_in? %>
     <body id="wrapper">
 
     <div id="header">
@@ -29,42 +27,3 @@
     </div>
 
     </body>
-
-    <!---------- 管理者がログインしている時 -------------->
-  <% elsif admin_signed_in? %>
-    <body id="wrapper">
-
-    <div id="header">
-      <%= render "layouts/header" %>
-    </div>
-
-
-    <div class="container">
-      <%= yield %>
-    </div>
-
-    <div id="footer">
-      <%= render "layouts/footer" %>
-    </div>
-
-    </body>
-
-    <!------------ ログアウトしている時 --------------->
-  <% else %>
-    <body id="wrapper">
-
-    <div id="header">
-      <%= render "layouts/header" %>
-    </div>
-
-    <div class="container">
-      <%= yield %>
-    </div>
-
-    <div id="footer">
-      <%= render "layouts/footer" %>
-    </div>
-
-    </body>
-  <% end %>
-

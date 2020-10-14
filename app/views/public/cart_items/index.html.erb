@@ -4,8 +4,8 @@
         <strong class="information-link"><h3>ショッピングカート</h3></strong>
         <%= link_to "カートを空にする", all_destroy_path, method: :delete, class: "pull-right btn btn-danger" %>
       </div>
-        <table class="table table-hover table-bordered col-xs-10" >
-         <thead>
+      <table class="table table-hover table-bordered col-xs-10" >
+        <thead>
           <tr class="info">
             <th class="col-xs-3">商品名</th>
             <th class="col-xs-2">単価（税込み）</th>
@@ -13,8 +13,8 @@
             <th class="col-xs-1">小計</th>
             <th class="col-xs-1"></th>
           </tr>
-         </thead>
-         <tbody>
+        </thead>
+        <tbody>
           <% @cart_items.each do |cart_item| %>
           <tr>
            <td class="col-xs-3"><%= attachment_image_tag cart_item.item, :image, :fill, 50, 50, format: 'jpeg',fallback: "no_image.jpg", size:'50x50' %><%= cart_item.item.name %></td>
@@ -36,31 +36,30 @@
           </tr>
           <% end %>
          </tbody>
-        </table>
+      </table>
     </div>
-</div>
 
 
-<div class="col-xs-8">
-    <span>
-    <%= link_to "買い物を続ける", root_path, class: "btn btn-primary", data: {"turbolinks" => false} %>
-    </span>
-</div>
-<div class="col-xs-4">
-    <table class="table table-bordered">
+    <div class="col-xs-8">
+      <span>
+        <%= link_to "買い物を続ける", root_path, class: "btn btn-primary", data: {"turbolinks" => false} %>
+      </span>
+    </div>
+    <div class="col-xs-4">
+      <table class="table table-bordered">
         <tr>
             <td class="info col-xs-2"><strong>合計金額</strong></td>
             <td class="col-xs-2">¥<%= @total_price.floor.to_s(:delimited, delimiter: ',') %></td>
         </tr>
-    </table>
-</div>
+      </table>
+    </div>
 
-<div class = "col-xs-4 col-xs-offset-4">
-    <span>
-      <% if @cart_items.presence %>
-        <%= link_to "情報入力に進む", new_order_path, class: "col-xs-12 btn btn-success"%>
-      <% else %>
-      <% end %>
-    </span>
+    <div class = "col-xs-4 col-xs-offset-4">
+      <span>
+        <% if @cart_items.presence %>
+          <%= link_to "情報入力に進む", new_order_path, class: "col-xs-12 btn btn-success"%>
+        <% else %>
+        <% end %>
+      </span>
     </div>
 </div>

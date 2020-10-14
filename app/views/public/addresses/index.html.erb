@@ -21,10 +21,7 @@
             </div>
         <% end %>
     </div>
-</div>
 
-
-<div class="row">
     <div class="col-xs-12">
         <table class="table table-hover table-bordered">
         <thead>
@@ -42,13 +39,12 @@
                 <td class="col-xs-6"><%= address.address %></td>
                 <td class="col-xs-2"><%= address.name %></td>
                 <td class="col-xs-2">
-                    <%= link_to "編集する", edit_address_path(address), class: "glyphicon glyphicon-pencil btn-sm btn-primary" %>
+                    <%= link_to "編集する", edit_address_path(address), class: "glyphicon glyphicon-pencil btn-sm btn-primary registration_btn" %>
                     <%= link_to "削除する", address_path(address), method: :DELETE, data: {confirm: "本当に削除してもよろしいですか？"}, class: "glyphicon glyphicon-trash btn-sm btn-danger" %>
                 </td>
               </tr>
             <% end %>
         </tbody>
         </table>
-        </div>
     </div>
 </div>
