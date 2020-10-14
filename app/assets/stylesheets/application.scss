@@ -23,7 +23,7 @@
     color: #000000;
     position: relative;
     box-sizing: border-box;
-    padding-bottom: 100px;
+    padding-bottom: 200px;
     min-height: 100vh;
 }
 
@@ -32,6 +32,7 @@
 header {
 	background-color: #444444;
 	color: #000;
+	margin-bottom: 100px;
 }
 .header_logo {
 	margin-top: 5px;
@@ -65,18 +66,15 @@ header {
 /*-----------body------------*/
 
 .containar {
-	padding-top: 20px;
+	padding-top: 100px;
+    padding-bottom: 100px;
 	background-color: white;
 	min-height: 100vh;
 	position: absolute;
 	box-sizing: border-box;
 }
 
-.row {
 
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
 
 /*-----------footer------------*/
 
