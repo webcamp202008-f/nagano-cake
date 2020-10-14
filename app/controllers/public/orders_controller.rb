@@ -57,7 +57,7 @@ class Public::OrdersController < ApplicationController
 			session[:order][:addressee] = params[:name]
 		end
 
-		# 新しいお届け先が選択された時,お届け先情報に漏れがあればリダイレクト
+
 		if session[:order][:post_code].presence && session[:order][:address].presence && session[:order][:name].presence
 			redirect_to new_order_path
 		else
