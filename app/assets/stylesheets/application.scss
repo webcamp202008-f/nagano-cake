@@ -27,6 +27,7 @@
 
 header {
 	background-color: #444444;
+  color: #FFFFFF;
 }
 .header_logo {
 	margin-top: 5px;
@@ -66,7 +67,11 @@ header {
 /*-----------footer------------*/
 
 footer {
-	background-color: #444444;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    bottom: 0;
+    background-color: #444444;
 }
 
 /*---------topスライドショー--------*/
