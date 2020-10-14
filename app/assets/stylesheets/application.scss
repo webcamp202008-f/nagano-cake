@@ -73,8 +73,9 @@ header {
 }
 
 .row {
-	padding-top: 100px;
-	padding-bottom: 100px;
+
+  padding-top: 100px;
+  padding-bottom: 100px;
 }
 
 /*-----------footer------------*/
@@ -103,4 +104,13 @@ footer {
       color: rgb(60, 60, 60) !important;
     }
   }
+}
+
+.registration_btn {
+  margin-bottom: 10px;
+}
+
+/*--------cus/items/show--------------*/
+.items-box {
+  padding-top: 120px;
 }
